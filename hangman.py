@@ -51,7 +51,7 @@ hangman_images = ['''
       |
 =========''']
 
-def gameplay(full_game_word_list):
+def itterations(full_game_word_list):
 
   game_word = []
   missing_letters = 0
@@ -65,10 +65,12 @@ def gameplay(full_game_word_list):
   print("_" * missing_letters)
 
 
-
   level_1_list = list(full_game_word_list[0])
 
   print(level_1_list)
+
+  # stage 2
+  gameplay(missing_letters)
 
 
 
@@ -96,7 +98,7 @@ def choice():
 
   full_game_words_list = [level_1_word, level_2_word, level_3_word, level_4_word, level_5_word]
 
-  gameplay(full_game_words_list)
+  itterations(full_game_words_list)
 
   print(full_game_words_list)
 
