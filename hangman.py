@@ -64,13 +64,18 @@ def itterations(full_game_word_list):
 
   print("_" * missing_letters)
 
+  print(game_word)
+
 
   level_1_list = list(full_game_word_list[0])
 
   print(level_1_list)
 
   # stage 2
-  gameplay(missing_letters)
+  gameplay(missing_letters, hangman_images, game_word)
+ 
+def gameplay(missing_letters, hangman_images, game_word):
+  print(missing_letters, hangman_images[0], game_word)
 
 
 
