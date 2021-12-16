@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 hangman_images = ['''
   +---+
@@ -68,14 +69,62 @@ def itterations(full_game_word_list):
 
 
   level_1_list = list(full_game_word_list[0])
+  level_2_list = list(full_game_word_list[1])
+  level_3_list = list(full_game_word_list[2])
+  level_4_list = list(full_game_word_list[3])
+  level_5_list = list(full_game_word_list[4])
 
   print(level_1_list)
+
+  print(full_game_word_list)
 
   # stage 2
   gameplay(missing_letters, hangman_images, game_word)
  
 def gameplay(missing_letters, hangman_images, game_word):
-  print(missing_letters, hangman_images[0], game_word)
+  
+
+  hangman_value = 0
+  
+  inncorect = 0
+  game_word_while_playing = []
+
+  itteration = -1
+
+  for i in game_word:
+    game_word_while_playing.append("_")
+
+  while True:
+    print(missing_letters, hangman_images[hangman_value], game_word)
+
+    
+    print("guess a letter")
+
+    guess = input()
+
+    for i in game_word:
+      print("itteration", itteration)
+
+      if i != guess:
+        inncorect_testing = inncorect + 1
+        print("inncorect", inncorect_testing)
+
+      if i == guess:
+        index_value = game_word.index(i)
+        missing_letters_testing = missing_letters - 1
+        print("missing_letters", missing_letters_testing)
+        game_word_while_playing.pop(index_value)
+        game_word_while_playing.insert(index_value, i)
+
+    if inncorect_testing == missing_letters:
+      hangman_value = hangman_value + 1
+      print(hangman_images[hangman_value])
+      print("incorrect")
+
+
+    elif inncorect_testing != missing_letters:
+      print(game_word_while_playing)
+
 
 
 
