@@ -1,5 +1,4 @@
 melancholia
-laissez-faire
 aggregation
 serendipity
 flabbergast
@@ -8,7 +7,6 @@ axiomatic
 ambiguous
 partitioning
 ephemeral
-unreality
 impersonality
 performativity
 auspicious
